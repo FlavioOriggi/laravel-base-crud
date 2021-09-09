@@ -6,31 +6,28 @@
     <div class="container">
         <table class="table">
             <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Titolo</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col">Azioni</th>
+                </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
+                @foreach ($comicz as $comic)
+                    
+                @endforeach
+
+                <tr>
+                    <th scope="row"> {{ $comic->id}}</th>
+                    <td>{{ $comic->title}}</td>
+                    <td>{{ $comic->description}}</td>
+                    <td>
+                        <a href="" class="btn btn-primary">Show</a>
+                        <a href="" class="btn btn-secondary">Edit</a>
+                        <a href="" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>              
             </tbody>
           </table>
     </div>
