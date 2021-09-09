@@ -15,21 +15,26 @@
             </thead>
             <tbody>
                 @foreach ($comicz as $comic)
+                    <tr>
+                        <th scope="row"> {{ $comic->id}}</th>
+                        <td>{{ $comic->title}}</td>
+                        <td>{{ $comic->description}}</td>
+                        <td>
+                            <a href="" class="btn btn-primary">Show</a>
+                            <a href="" class="btn btn-secondary">Edit</a>
+                            <a href="" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>  
                     
                 @endforeach
 
-                <tr>
-                    <th scope="row"> {{ $comic->id}}</th>
-                    <td>{{ $comic->title}}</td>
-                    <td>{{ $comic->description}}</td>
-                    <td>
-                        <a href="" class="btn btn-primary">Show</a>
-                        <a href="" class="btn btn-secondary">Edit</a>
-                        <a href="" class="btn btn-danger">Delete</a>
-                    </td>
-                </tr>              
+                            
             </tbody>
           </table>
+
+          <div>
+              {{ $comicz->links() }}
+          </div>
     </div>
 
     
