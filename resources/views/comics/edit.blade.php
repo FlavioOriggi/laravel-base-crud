@@ -4,9 +4,10 @@
 
 @section('content')
     <div class="container mt-3">
-        <h2>Modifica prodotto</h2>
+        <h2>Modifica prodotto {{ $comic->id}}</h2>
         <form action="{{ route('comics.update', $comic->id) }} " method="post">
             @csrf
+            @method('PUT')
             <div class="mb-3">
                 <label for="tit" class="form-label">Titolo</label>
                 <input type="text" name="title" class="form-control" id="tit" value="{{ $comic->title }}">
@@ -48,7 +49,7 @@
             </div>           
 
            
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Salva</button>
         </form>
     </div>
     

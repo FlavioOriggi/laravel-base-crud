@@ -59,13 +59,6 @@ class ComicController extends Controller
 
         return redirect()->route('comics.show', $newComic->id);
 
-        
-
-
-
-
-
-
     }
 
     /**
@@ -92,7 +85,8 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comic = Comic::find($id);
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -104,12 +98,12 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        dd($request->all());
+        // dd($request->all());
         $data = $request->all();
 
         $comic->update($data);
 
-        return redirect()->route('comics.index')->with('modifica', 'Hai appena modificato il record con id' .$comic->id);
+        return redirect()->route('comics.index')->with('modifica', 'Hai appena modificato il record con id ' .$comic->id);
     }
 
     /**

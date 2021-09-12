@@ -23,6 +23,12 @@
             {{ $comic->price }} <span class="badge bg-secondary">€</span>
         </button>
 
+        <button  type="button" class=" btn-secondary">
+            <a class="nav-link text-white" href="{{ route('comics.index')}}">Torna all'elenco</a>
+
+        </button>
+
+
         
     </div>
 
